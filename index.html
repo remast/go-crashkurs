@@ -28,7 +28,7 @@
                 <h1>Go Crashkurs</h1>
             </section>
            <section>
-             <section data-background-image="./themes/cameron-venti-1cqIcrWFQBI-unsplash.jpg">
+             <section data-background-image="./themes/10x_ts_with_go.png">
                 <aside class="notes">
                     <ul>
                         <li>2013 begann eine Truppe um Solomon Hykes die Welt der Linux Container zu revolutionieren</li>
@@ -37,27 +37,8 @@
                     </ul>
                 </aside>
              </section>
-             <section>
-                <div class="grid grid-cols-3 gap-1 items-center">
-                    <div></div>
-                    <div class="" >
-                        <img src="./themes/Moby-logo.png" width="400px"  class="align-middle"></img>
-                    </div>
-                    <div></div>
-                </div>
-                <h1>467.882 <span style="font-size: 50%;">Zeilen Code</span></h1>
-                <h1>2.130 <span style="font-size: 50%;">Contributors</span></h1>
-               </section>
                <section>
                 <img src="./themes/Go-Logo_White.png" width="60%" style="margin: auto;" />
-               </section>
-               <section>
-                <h2 style="font-size: 170%;">3 Gründe für Go</h2>
-                <ol style="font-size: 130%;">
-                    <li class="fragment">Einfach</li>
-                    <li class="fragment">Mächtig</li>
-                    <li class="fragment">Langweilig</li>
-                </ol>
                </section>
        </section>
            </section>
@@ -302,39 +283,32 @@
                         </ul>
                     </aside>
                 </section>
-                <section>
+                <section data-run-in-terminal="05_generics/generic_function.go" data-run-in-terminal-bin="go">
                     <h2>Generics</h2>
-                    <div class="r-stack fragment">
-                        <div>
-                            <pre style="width: 100%;"><code data-trim data-noescape class="go">
-                                func printSliceOfInts(numbers []int) {
-                                    for _, num := range numbers {
-                                        fmt.Print(num, " ")
-                                    }
+                            <pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="1-4|1-4,7-8|1-4,11-12|" data-noescape class="go">
+                                // Generische Funktion: Hunde-Alter * 3 = Menschen-Alter
+                                func humanAge[T int32 | float64](dogAge T) T {
+                                    return dogAge * 7
+                                }
+                                
+                                func main() {
+                                    // Generische Funktion mit Typ int aufrufen
+                                    var i int32 = humanAge[int32](3)
+                                    fmt.Println("int:", i)
+                                
+                                    // Generische Funktion mit Typ float aufrufen
+                                    var f float64 = humanAge[float64](4.9)
+                                    fmt.Println("float", f)
                                 }
                         </code></pre>
-                        <pre style="width: 100%;"><code data-trim data-noescape class="go">
-                            func printSliceOfStrings(strings []string) {
-                                for _, num := range strings {
-                                    fmt.Print(num, " ")
-                                }
-                            }
-                        </code></pre>
-                        </div>
-                        <div>                            
-                            <div class="box-content rounded p-6 border-4 transform -rotate-12" style="background-color: #0072CE;">
-                                Kommen in Go 1.18 im Februar 2022!
-                            </div>
-                        </div>
-                    </div>
                 </section>
             </section>
             <section>
                 <section>
-                    <h1>Nebenläufig Programmieren 🚀</h1>
+                    <h1 class="cross-red">Nebenläufig Programmieren 🚀</h1>
                 </section>
                 <section>
-                    <h2>Concurrency</h2>
+                    <h2 class="cross-red">Concurrency</h2>
                     <div class="grid grid-cols-2 gap-1 text-left" style="font-size: 0.8em;">
                         <div class="fragment" style="color: #FFC800;">
                             <h4 style="color: inherit; font-size: 1em;">Goroutine</h4>
@@ -360,7 +334,7 @@
                     </div>
                 </section>
                 <section data-run-in-terminal="06_goroutine/congressman.go" data-run-in-terminal-bin="go">
-                    <h2>Goroutine</h2>
+                    <h2 class="cross-red">Goroutine</h2>
                     <pre><code data-trim data-noescape class="go" data-line-numbers="4-7">
                         func HelloCongressman(name string) {
                           fmt.Println("Hello Congressman", name)
@@ -436,7 +410,7 @@
                 </section>
                 -->
                 <section >
-                    <h2>Channel</h2>
+                    <h2 class="cross-red">Channel</h2>
                     <pre style="font-size: 0.5em; overflow: hidden;"><code data-trim data-noescape class="go" data-line-numbers="1-2|4-5|7-9">                        
                         // Deklarieren und Initialisieren
                         c := make(chan int)
@@ -457,7 +431,7 @@
                     </aside>
                 </section>
                 <section>
-                    <h2 style="margin-bottom: 5px;">Debatte <span style="font-size: 50%;">mit Goroutinen und Channels</span></h2>
+                    <h2 class="cross-red" style="margin-bottom: 5px;">Debatte <span style="font-size: 50%;">mit Goroutinen und Channels</span></h2>
                     <pre style="font-size: 0.45em; margin: 0; width: 100%; line-height: 1;"><code data-trim data-noescape class="go" data-line-numbers="14|14-17|14-22|1-11,14-22">                        
                         func speaker(name string, debate chan int) {
                           for {
@@ -485,7 +459,7 @@
                     </code></pre>
                 </section>
                 <section>
-                    <h2 style="margin-bottom: 5px;">Debatte <span style="font-size: 50%;">mit Goroutinen und Channels</span></h2>
+                    <h2 class="cross-red" style="margin-bottom: 5px;">Debatte <span style="font-size: 50%;">mit Goroutinen und Channels</span></h2>
                     <pre style="font-size: 0.45em; margin: 0; width: 100%; line-height: 1;"><code data-trim data-noescape>                        
                         >_ go run debate.go
                         Turn 1: Frank says 'You liar.'
@@ -592,21 +566,318 @@
                 -->
             </section>
             <section>
+                <section data-background-image="./themes/Pattern-13-outline.svg" data-background-size="400px"
+                  data-background-repeat="repeat" data-background-opacity=".15">
+                  <h1 class="cross-yellow">Web App <br/> Tarifrechner DogOP</h1>
+                </section>
+                <section>
+                  <h2 class="cross-yellow">Tarifrechner DogOp</h2>
+                  <ul>
+                    <li class="fragment">REST API die Hunde OP Versicherung berechnet</li>
+                    <li class="fragment">Bereitstellung als Container</li>
+                    <li class="fragment">Konfiguration über Umgebungsvariablen</li>
+                  </ul>
+                </section>
+              <section>
+                <h2 class="cross-yellow">Projekt DogOP aufsetzen</h2>
+                <pre class="fragment"><code data-trim data-noescape class="java">
+                go mod init crossnative/dogop   // Go Modul initialisieren
+              </code></pre>
+                <pre class="fragment"><code data-trim data-noescape class="java">
+                go get github.com/go-chi/chi/v5 // Chi Dependency einbinden
+              </code></pre>
+                <span class="fragment">Projektstruktur
+                  <pre><code data-trim data-noescape class="java">
+                  go.mod // Modul Deskriptor mit Dependencies
+                  go.sum // Checksummen der Dependencies
+                </code></pre>
+                </span>
+              </section>
+              <section>
+                <h2 class="cross-yellow">Projekt DogOP aufsetzen</h2>
+                <pre style="font-size: 44%;"><code data-trim data-noescape class="go" data-line-numbers="1-8,14|9|10-12|13|">
+                package main
+                
+                import (
+                  "net/http"
+                  "github.com/go-chi/chi/v5"
+                )
+                
+                func main() {
+                  r := chi.NewRouter()
+                  r.HandleFunc("GET /", func(w http.ResponseWriter, req *http.Request) {
+                    w.Write([]byte("Hello DogOp!"))
+                  })
+                  http.ListenAndServe(":8080", r)
+                }
+              </code></pre>
+              </section>
+              <section>
+                <h2 class="cross-yellow">Bauen und Ausführen</h2>
+                <pre class="fragment"><code data-trim data-noescape class="java">
+                // 1. Kompilieren in Binary
+                go build -o build/dogop .
+              </code></pre>
+      
+                <pre class="fragment"><code data-trim data-noescape class="java">
+                // 2. Binary ausführen
+                ./build/dogop
+              </code></pre>
+                <aside class="notes">
+                  1. Dieses Binary ist für meine spezifische Plattform kompiliert, bei mir ein Mac.
+                  2. Go Build lädt auch
+                  automatisch alle Abhängigkeiten herunter wie unseren HTTP Router chi. Ein separater Package Manager wie
+                  Maven oder NPM
+                  ist in Go nicht erforderlich, das bringt Go Build bereits alles mit.
+                </aside>
+              </section>
+              <section>
+                <h2 class="cross-yellow">Bauen und Ausführen</h2>
+                <img src="themes/go-cloud-native/vscode_run.png" />
+              </section>
+              <section>
+                <h2 class="cross-yellow">REST API für Rechner</h2>
+                <div class="grid grid-cols-12 gap-1 content-start" style="font-size: 75%;">
+                  <div class="col-span-6">
+                    <span class="fragment">
+                      Request
+                      <pre><code data-trim data-noescape class="bash">
+                      POST /api/quote
+                      content-type: application/json
+                      
+                      {
+                        "age": 8,
+                        "breed": "chow"
+                      }
+                    </code></pre>
+                    </span>
+                  </div>
+                  <div class="col-span-6">
+                    <span class="fragment">
+                      Response
+                      <pre><code data-trim data-noescape class="bash">
+                      HTTP/1.1 200 OK
+                      Content-Type: application/json
+                      
+                      {
+                        "age": 8,
+                        "breed": "chow",
+                        "tariffs": [
+                          {
+                            "name": "Dog OP _ Basic",
+                            "rate": 12.4
+                          }
+                        ]
+                      }
+                    </code></pre>
+                    </span>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h2 class="cross-yellow">REST API für Rechner</h2>
+                <pre style="font-size: 0.44em;"><code data-trim data-noescape class="go" data-line-numbers="14,17,24|1,12|2-4|6-8|10-11|">
+                func HandleQuote(w http.ResponseWriter, r *http.Request) {
+                  // 1. JSON Request lesen
+                  var q Quote
+                  json.NewDecoder(r.Body).Decode(&q)
+                  
+                  // 2. Tarif berechnen
+                  tariff := Tariff{Name: "Dog OP _ Basic", Rate: 12.4}
+                  quote.Tariffs = []Tariff{tariff}
+                  
+                  // 3. JSON Response schreiben
+                  json.NewEncoder(w).Encode(quote)
+                }
+                
+                func main() {
+                  r := chi.NewRouter()
+                  
+                  r.HandleFunc("POST /api/quote", HandleQuote)
+                  
+                  r.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
+                    w.Write([]byte("Hello DogOp!"))
+                  })
+                  
+                  http.ListenAndServe(":8080", r)
+                }
+              </code></pre>
+                <div class="fragment box-content rounded p-6 border-4 transform -rotate-12 text-black"
+                  style="position: relative; top: -380px; background-color: rgba(255, 200, 0);">
+                  Achtung, noch ohne Fehlerhandling! 💣
+                </div>
+              </section>
+              <section>
+                <h2 class="cross-yellow">Struct <span style="font-size: 50%;">statt Klasse</span></h2>
+                <pre><code data-trim data-noescape data-line-numbers="1-4|6-10|" class="go">
+                type Tariff struct {
+                  Name string  `json:"name"`
+                  Rate float64 `json:"rate"`
+                }
+                
+                type Quote struct {
+                  Age     int      `json:"age"`
+                  Breed   string   `json:"breed"`
+                  Tariffs []Tariff `json:"tariffs"`
+                }          
+              </code></pre>
+                <pre class="fragment"><code data-trim data-noescape class="go">
+                // Struct erzeugen
+                tariff := Tariff{Name: "Dog OP _ Basic", Rate: 12.4}
+              </code></pre>
+              </section>
+              <section>
+                <h2 class="cross-yellow">Fehler 💣</h2>
+                <pre style="font-size: 0.53em;"><code data-trim data-noescape class="go" data-line-numbers="1,12|4,11">
+                func HandleQuote(w http.ResponseWriter, r *http.Request) {
+                  // 1. JSON Request lesen
+                  var q Quote
+                  json.NewDecoder(r.Body).Decode(&q) // 💣 Fehler möglich!
+                  
+                  // 2. Tarif berechnen
+                  tariff := Tariff{Name: "Dog OP _ Basic", Rate: 12.4}
+                  quote.Tariffs = []Tariff{tariff}
+                  
+                  // 3. JSON Response schreiben
+                  json.NewEncoder(w).Encode(quote) // 💣 Fehler möglich!
+                }
+              </code></pre>
+                <aside class="notes">
+                  <ul>
+                    <li>Go kennt kein spezielles Konstrukt zur Fehlerbehandlung</li>
+                    <li>Fehler sind normale Rückgabewerte</li>
+                  </ul>
+                </aside>
+              </section>
+              <section>
+                <img src="themes/go-cloud-native/godoc-decode.png" />
+              </section>
+              <section>
+                <h2 class="cross-yellow">Fehler 💣</h2>
+                <pre style="font-size: 0.44em;"><code data-trim data-noescape class="go" data-line-numbers="1,16|5,6|8,9,13|10-12{5-13}">
+                func HandleQuote(w http.ResponseWriter, r *http.Request) {
+                  // 1. JSON Request lesen
+                  var q Quote
+                  
+                  // Potentieller Fehler
+                  err := json.NewDecoder(r.Body).Decode(&q)
+                  
+                  // Auf Fehler prüfen
+                  if err != nil {
+                    // Fehler behandeln
+                    http.Error(w, "Could not decode quote.😔", http.StatusBadRequest)
+                    return
+                  }
+                  
+                  // ...
+                }
+              </code></pre>
+                <aside class="notes">
+                  <ul>
+                    <li>Go kennt kein spezielles Konstrukt zur Fehlerbehandlung</li>
+                    <li>Fehler sind normale Rückgabewerte</li>
+                  </ul>
+                </aside>
+              </section>
+              <section>
+                <h2 class="cross-yellow">HTTP Handler testen</h2>
+                <ul>
+                  <li class="fragment">Unit Tests in Standardlib enthalten</li>
+                  <li class="fragment">Tests in Datei <code>main_test.go</code></li>
+                </ul>
+              </section>
+              <section>
+                <h2 class="cross-yellow">HTTP Handler testen</h2>
+                <pre style="font-size: 0.4em; overflow: hidden;"><code data-trim data-noescape data-line-numbers="1,21|2-3|5-12|14-15|17-20|" class="go">
+                func TestHandleQuote(t *testing.T) {
+                  // 1. HTTP Recorder erstellen
+                  recorder := httptest.NewRecorder()
+                  
+                  // 2. Request erstellen (mit Body)
+                  body := `
+                  {
+                    "age": 8,
+                    "breed": "chow"
+                  }
+                  `
+                  req, _ := http.NewRequest("GET", "/api/quote", strings.NewReader(body))
+                  
+                  // 3. Handler Funktion aufrufen
+                  HandleQuote(recorder, req)
+                  
+                  // 4. Return Code prüfen
+                  if recorder.Code != http.StatusOK {
+                    t.Errorf("Wrong status: got %v expected %v", recorder.Code, http.StatusOK)
+                  }
+                }
+              </code></pre>
+              </section>
+              <section>
+                <h2 class="cross-yellow">HTTP Handler testen</h2>
+                <pre class="fragment"><code data-trim data-noescape class="bash">
+                go test -v ./...
+              </code></pre>
+      
+                <pre class="fragment"><code data-trim data-noescape class="bash">
+                === RUN TestHandleQuote
+                --- PASS: TestHandleQuote (0.00s)
+                PASS
+                ok crossnative/dogop 0.228s
+              </code></pre>
+              </section>
+              <section>
+                <h2 class="cross-yellow">HTTP Handler testen</h2>
+                <img src="themes/go-cloud-native/vscode_handler_test.png" width="80%" />
+              </section>
+              <section>
+                <h2 class="cross-yellow">Port per Umgebungsvariable konfigurieren</h2>
+                <pre class="fragment"><code data-trim data-noescape class="go" data-line-numbers="5|4-7|4-8">
+                // Einfach per Standardlib
+                
+                function main() {
+                  port := cmp.Or(
+                    os.Getenv("PORT"), 
+                    "8080",
+                  )
+                  http.ListenAndServe(fmt.Sprintf(":%v", port), r)
+                }
+              </code></pre>
+              </section>
+              <section>
+                <h2 class="cross-yellow">Dockerfile für DogOP</h2>
+                <pre class="fragment" style="font-size: .51em;"><code data-trim data-noescape class="bash" data-trim data-noescape data-line-numbers="1-5|7-11|">
+                # 1. DogOp Builder
+                FROM golang as builder
+                WORKDIR /app
+                ADD . /app
+                RUN CGO_ENABLED=0 go build -ldflags="-w -s" -o build/dogop .
+                
+                # 2. DogOp Container
+                FROM alpine
+                COPY --from=builder /app/build/dogop /usr/bin/
+                EXPOSE 8080
+                ENTRYPOINT ["/usr/bin/dogop"]
+              </code></pre>
+              </section>
+    
+            </section>
+        
+            <section>
                 <section>
                     <div class="grid grid-cols-3 gap-1 text-left">
                         <div class="fragment">
-                            <h4 style="padding-bottom: 10px;"><span style="font-size: 80%;">Einfach</span> Langweilig</h4>
+                            <h4 style="padding-bottom: 10px;">Grundlagen</h4>
                             <ul style="font-size: 95%;">
                                 <li>Variablen, Slices, Schleifen</li>
                                 <li>Struct</li>
+                                <li>Struct Embedding</li>
+                                <li>Fehler</li>
+                                <li>Generics</li>
                             </ul>
                         </div>
                         <div class="fragment">
                             <h4 style="padding-bottom: 10px;"><span style="font-size: 80%;">&nbsp;</span> <br/> Zu Einfach?</h4>
                             <ul style="font-size: 95%;">
-                                <li>Struct Embedding</li>
-                                <li>Fehler</li>
-                                <li>Generics</li>
                             </ul>
                         </div>
                         <div class="fragment">
@@ -652,6 +923,14 @@
                         </div>
                     </div>
                 </section>
+                <section>
+                    <h2 style="font-size: 170%;">3 Gründe für Go</h2>
+                    <ol style="font-size: 130%;">
+                        <li class="fragment">Einfach</li>
+                        <li class="fragment">Mächtig</li>
+                        <li class="fragment">Langweilig</li>
+                    </ol>
+                   </section>    
             </section>
             <section>
                 <section>

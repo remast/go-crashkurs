@@ -7,11 +7,11 @@ func humanAge[T int32 | float64](dogAge T) T {
 }
 
 func main() {
-	// Generische Funktion mit Typ int aufrufen
+	// Generische Funktion mit Typ int32 aufrufen
 	var i int32 = humanAge[int32](3)
 	fmt.Println("int:", i)
 
-	// Generische Funktion mit Typ float aufrufen
+	// Generische Funktion mit Typ float64 aufrufen
 	var f float64 = humanAge[float64](4.9)
-	fmt.Println("float", f)
+	fmt.Println("float:", f)
 }

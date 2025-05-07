@@ -174,7 +174,7 @@
                     <h2>Interface</h2>
                     <div class="grid grid-cols-4 gap-0">
                         <div class="text-left col-span-2">
-                            <pre style="font-size: 0.41em;"><code data-trim data-noescape class="go" data-line-numbers="1-3|5-8|10-14|1-3">
+                            <pre style="font-size: 0.4em;"><code data-trim data-noescape class="go" data-line-numbers="1-3|5-8|10-14|1-3">
                             type Greeter interface {
                               greet()   
                             }
@@ -292,11 +292,11 @@
                                 }
                                 
                                 func main() {
-                                    // Generische Funktion mit Typ int32 aufrufen
+                                    // Generische Funktion mit int32 aufrufen
                                     var i int32 = humanAge[int32](3)
                                     fmt.Println("int:", i)
                                 
-                                    // Generische Funktion mit Typ float64 aufrufen
+                                    // Generische Funktion mit float64 aufrufen
                                     var f float64 = humanAge[float64](4.9)
                                     fmt.Println("float:", f)
                                 }
@@ -592,7 +592,7 @@
               </section>
               <section>
                 <h2 class="cross-yellow">Projekt DogOP aufsetzen</h2>
-                <pre style="font-size: 45%;"><code data-trim data-noescape class="go" data-line-numbers="3-5,7-9|11-14|16-17|">
+                <pre style="font-size: 44%;"><code data-trim data-noescape class="go" data-line-numbers="3-5,7-9|11-14|16-17|">
                 package main
                 
                 import (
@@ -709,7 +709,7 @@
                 </div>
               </section>
               <section>
-                <h2 class="cross-yellow">Struct <span style="font-size: 50%;">statt Klasse</span></h2>
+                <h2 class="cross-yellow">Struct <span style="font-size: 50%;">für JSON</span></h2>
                 <pre><code data-trim data-noescape data-line-numbers="1-4|6-10|" class="go">
                 type Tariff struct {
                   Name string  `json:"name"`
@@ -789,7 +789,7 @@
               </section>
               <section>
                 <h2 class="cross-yellow">HTTP Handler testen</h2>
-                <pre style="font-size: 0.41em; overflow: hidden;"><code data-trim data-noescape data-line-numbers="1,21|2-3|5-12|14-15|17-20|" class="go">
+                <pre style="font-size: 0.4em; overflow: hidden;"><code data-trim data-noescape data-line-numbers="1,21|2-3|5-12|14-15|17-20|" class="go">
                 func TestHandleQuote(t *testing.T) {
                   // 1. HTTP Recorder erstellen
                   recorder := httptest.NewRecorder()
